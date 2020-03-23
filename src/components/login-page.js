@@ -5,22 +5,6 @@ import './style.css'
 
 const Main = () => {
     const [login,setLogin] = useState(false)
-    const params = new URLSearchParams(document.location.href)
-    const authKey = params.get("code")
-    // window.addEventListener("beforeunload",(event) => {
-    //     event.preventDefault()
-    //     cookies.remove("access_token")
-    //     cookies.remove("refresh_token")
-    //     alert("window closing!...")
-    //     return event.returnValue = "this session is closed login again to access///"
-    // })
-
-    useEffect(() => {
-        if (authKey !== null){
-            console.log(authKey)
-            sessionStorage.setItem("code",authKey)
-        }
-    },[authKey])
 
     useEffect(() => {
         let access_token = cookies.get("access_token")
