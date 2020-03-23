@@ -36,7 +36,7 @@ const Main = () => {
     return (
         <div className="login-comp">
             <button className="login-button">
-                <a href="https://spot-ly.herokuapp.com/login" 
+                <a href="http://localhost:5000/login" 
                 onClick={() => setLogin(true)}>
                     login with spotify
                 </a>

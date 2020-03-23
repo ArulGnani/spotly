@@ -9,7 +9,7 @@ const RenderLyric = (props) => {
     
     const getLyric = () => {
         if (props.url){ 
-            fetch("https://spot-ly.herokuapp.com/lyric",{
+            fetch("http://locahost:5000/lyric",{
                 method : "POST",
                 headers : {
                     "Accept" : "application/json",
