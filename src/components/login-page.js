@@ -16,7 +16,10 @@ const Main = () => {
     // })
 
     useEffect(() => {
-        console.log(authKey)
+        if (authKey !== null){
+            console.log(authKey)
+            sessionStorage.setItem("code",authKey)
+        }
     },[authKey])
 
     useEffect(() => {
