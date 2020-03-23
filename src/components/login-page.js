@@ -5,7 +5,8 @@ import './style.css'
 
 const Main = () => {
     const [login,setLogin] = useState(false)
-    
+    const params = new URLSearchParams(document.location.href)
+    const authKey = params.get("code")
     // window.addEventListener("beforeunload",(event) => {
     //     event.preventDefault()
     //     cookies.remove("access_token")
@@ -13,6 +14,10 @@ const Main = () => {
     //     alert("window closing!...")
     //     return event.returnValue = "this session is closed login again to access///"
     // })
+
+    useEffect(() => {
+        console.log(authKey)
+    },[authKey])
 
     useEffect(() => {
         let access_token = cookies.get("access_token")
