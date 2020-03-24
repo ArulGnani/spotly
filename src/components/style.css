@@ -106,14 +106,14 @@ body {
 .ly{
     margin-bottom: 10px;
     border-radius: 55px;
-    background: linear-gradient(225deg, #4da7db, #5bc6ff);
-    box-shadow:  -5px 5px 10px #4290be, 
-                5px -5px 10px #68e2ff;
+    background: #303030;
+    box-shadow:  5px 5px 10px #131313, 
+                 -5px -5px 10px #4d4d4d;
 }
 .ly:hover{
-    background: #55b9f3;
-    box-shadow: inset 5px 5px 10px #36769c, 
-                inset -5px -5px 10px #74fcff;
+    background: #303030;
+    box-shadow: inset 5px 5px 10px #131313, 
+                inset -5px -5px 10px #4d4d4d;
 }
 
 .lyric-render{
@@ -125,14 +125,14 @@ body {
     margin-top: 20px;
     margin-bottom: 20px;
     border-radius: 25px;
-    background: #55b9f3;
-    box-shadow: inset 5px 5px 10px #36769c, 
-                inset -5px -5px 10px #74fcff;
+    background: #303030;
+    box-shadow: inset 6px 6px 12px #131313, 
+                inset -6px -6px 12px #4d4d4d;
 }
 
 @media(max-width:500px){
     .login-comp{
-        background: #55b9f3;
+        background: linear-gradient(145deg, #2b2b2b, #333333);
         width: 100%;
         display: flex;
         align-items: center;
@@ -141,10 +141,9 @@ body {
     
     .login-button {
         border-radius: 50%;
-        background: linear-gradient(145deg, #4da7db, #5bc6ff);
-        box-shadow:  5px 5px 8px #224a61, 
-                    -5px -5px 8px #88ffff;
-        background: #55b9f3;
+        box-shadow: 5px 5px 10px #131313, 
+                    -5px -5px 10px #4d4d4d;
+        background: linear-gradient(145deg, #2b2b2b, #333333);
         height : 200px;
         width : 200px;
         border : none;
@@ -180,15 +179,15 @@ body {
         font-size: 20px;
         border: none;
         color: white;
-        background: #55b9f3;
-        box-shadow:  5px 5px 13px #3f89b4, 
-                    -5px -5px 13px #6be9ff;
+        background: #303030;
+        box-shadow: 5px 5px 10px #131313, 
+                    -5px -5px 10px #4d4d4d;
     }
 
     .song-name{
         font-style: italic;
         text-align: center;
-        font-size: 40px;
+        font-size: 30px;
         font-weight: 600;
     }
 }
