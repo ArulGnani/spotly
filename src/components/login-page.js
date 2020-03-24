@@ -5,7 +5,7 @@ import './style.css'
 const Main = () => {
     const [login,setLogin] = useState(false)
     const client_id = "b96984e2f4f348858f5a04856e28b968"
-    const redirect = "http://localhost:3000/"
+    const redirect = "https://spotly.netlify.com/"
     const scope = 'user-read-currently-playing user-read-playback-state'
     const state = "sample123"
     let url = "https://accounts.spotify.com/authorize?response_type=token&"
@@ -28,10 +28,10 @@ const Main = () => {
                 if (token){
                     sessionStorage.removeItem("access_token")
                     sessionStorage.setItem("access_token",hashParams["access_token"])
-                    window.location.replace("http://localhost:3000/")
+                    window.location.replace("https://spotly.netlify.com/")
                 }else{
                     sessionStorage.setItem("access_token",hashParams["access_token"])
-                    
+                    window.location.replace("https://spotly.netlify.com/")
                 }
             }else{
                 alert("can't get access_token")
