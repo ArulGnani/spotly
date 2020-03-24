@@ -9,7 +9,7 @@ const RenderLyric = (props) => {
     
     const getLyric = () => {
         if (props.url){ 
-            fetch("http://localhost:5000/lyric",{
+            fetch("http://ec2-3-20-206-50.us-east-2.compute.amazonaws.com:8080/lyric",{
                 method : "POST",
                 headers : {
                     "Accept" : "application/json",
