@@ -5,15 +5,18 @@ import './style.css'
 
 const Main = () => {
     const [login,setLogin] = useState(false)
+    const client_id = "b96984e2f4f348858f5a04856e28b968"
+    const redirect = "http://localhost:3000/"
+    const scope = 'user-read-currently-playing user-read-playback-state'
+    const state = "sample123"
+    const url = `https://accounts.spotify.com/authorize?response_type=token&
+                 client_id=${encodeURIComponent(client_id)}
+                 &scope=${encodeURIComponent(scope)}
+                 &redirect_uri=${encodeURIComponent(redirect)}
+                 &state=${encodeURIComponent(state)}`
     
-    // window.addEventListener("beforeunload",(event) => {
-    //     event.preventDefault()
-    //     cookies.remove("access_token")
-    //     cookies.remove("refresh_token")
-    //     alert("window closing!...")
-    //     return event.returnValue = "this session is closed login again to access///"
-    // })
-
+    console.log(url)
+    
     useEffect(() => {
         let access_token = cookies.get("access_token")
         let refresh_token = cookies.get("refresh_token")
