@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import cookies from 'js-cookie'
 import Lyric from './lyric'
  
 const Playing = () => {
@@ -14,8 +13,7 @@ const Playing = () => {
     },[])
 
     const getCurrentSong = () => {
-        let access_token = cookies.get("access_token")
-        console.log(access_token)
+        let access_token = sessionStorage.getItem("access_token")
         if (access_token){
             fetch("https://api.spotify.com/v1/me/player/currently-playing",{
                 method : "GET",

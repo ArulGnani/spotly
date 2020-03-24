@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import cookies from 'js-cookie'
 import MainPage from './main-page'
 import './style.css'
 
@@ -9,22 +8,44 @@ const Main = () => {
     const redirect = "http://localhost:3000/"
     const scope = 'user-read-currently-playing user-read-playback-state'
     const state = "sample123"
-    const url = `https://accounts.spotify.com/authorize?response_type=token&
-                 client_id=${encodeURIComponent(client_id)}
-                 &scope=${encodeURIComponent(scope)}
-                 &redirect_uri=${encodeURIComponent(redirect)}
-                 &state=${encodeURIComponent(state)}`
+    let url = "https://accounts.spotify.com/authorize?response_type=token&"
+    url += 'client_id=' + encodeURIComponent(client_id)
+    url += '&scope=' + encodeURIComponent(scope)
+    url += '&redirect_uri=' + encodeURIComponent(redirect)
+    url += '&state=' + encodeURIComponent(state) 
     
-    console.log(url)
-    
+    // get token from query string after spotify-OAuth 
     useEffect(() => {
-        let access_token = cookies.get("access_token")
-        let refresh_token = cookies.get("refresh_token")
-        console.log(access_token,refresh_token)
-        if(access_token && refresh_token){
+        if (document.location.hash){
+            let hashParams = {}
+            let e, r = /([^&;=]+)=?([^&;]*)/g,
+            q = document.location.hash.substring(1)
+            while ( e = r.exec(q)) {
+                hashParams[e[1]] = decodeURIComponent(e[2])
+            }
+            if (hashParams["access_token"] !== ""){
+                let token = sessionStorage.getItem("access_token")
+                if (token){
+                    sessionStorage.removeItem("access_token")
+                    sessionStorage.setItem("access_token",hashParams["access_token"])
+                    window.location.replace("http://localhost:3000/")
+                }else{
+                    sessionStorage.setItem("access_token",hashParams["access_token"])
+                    
+                }
+            }else{
+                alert("can't get access_token")
+            }
+        }
+    },[document.location.hash])
+
+    useEffect(() => {
+        // let access_token = cookies.get("access_token")
+        let access_token = sessionStorage.getItem("access_token")
+        if(access_token){
             setLogin(true)
         }else{
-            if (access_token === undefined || refresh_token === undefined){
+            if (access_token === undefined){
                 alert("login to access the home page!...")
             }else{
                 alert("login can't get access-token from server")
@@ -39,7 +60,7 @@ const Main = () => {
     return (
         <div className="login-comp">
             <button className="login-button">
-                <a href="http://localhost:5000/login" 
+                <a href={url} 
                 onClick={() => setLogin(true)}>
                     login with spotify
                 </a>
