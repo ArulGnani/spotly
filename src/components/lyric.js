@@ -15,7 +15,7 @@ const Lyric = (props) => {
         let accessToken = cookie.get("access_token")
         console.log(props.songName)
         if (accessToken !== ""){
-            fetch(`http://ec2-3-20-206-50.us-east-2.compute.amazonaws.com:8080/find-lyric/${props.songName}`,{ 
+            fetch(`https://spotly-backend.herokuapp.com/find-lyric/${props.songName}`,{ 
                 method : "GET",
                 headers : {
                     "Access-Control-Allow-Origin" : true,

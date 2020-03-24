@@ -9,7 +9,7 @@ const RenderLyric = (props) => {
     
     const getLyric = () => {
         if (props.url){ 
-            fetch("http://ec2-3-20-206-50.us-east-2.compute.amazonaws.com:8080/lyric",{
+            fetch("https://spotly-backend.herokuapp.com/lyric",{
                 method : "POST",
                 headers : {
                     "Accept" : "application/json",

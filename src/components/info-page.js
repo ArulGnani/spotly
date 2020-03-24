@@ -41,6 +41,7 @@ const Playing = () => {
     const validSongName = (song) => {
         let arr = song.split("(")
         let songname = arr[0]
+        songname = songname.replace(/\s/g,"+")
         setSong(songname.toLowerCase())
     }
     
