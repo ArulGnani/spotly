@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import Playing from './info-page'
 
 const Home = () => {

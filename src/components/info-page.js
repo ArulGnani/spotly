@@ -60,9 +60,12 @@ const Playing = () => {
                     </a>
                 </button>
                 <button className="btn">| |</button>
-                <button onClick={() => setLyric(true)} 
+                {/* <button onClick={() => setLyric(true)} 
                 className="btn">
                     lyric
+                </button> */}
+                <button className="btn">
+                    
                 </button>
             </div>
         </div>
