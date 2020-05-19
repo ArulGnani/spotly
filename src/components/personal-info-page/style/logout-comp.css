@@ -1,0 +1,38 @@
+
+#logout {
+    border: 2px solid rgb(26, 151, 26);
+    border-radius: 5px;
+    background: transparent;
+    transition: background 0.3s ease,transform 0.3s ease;
+    position: absolute;
+    top: 30px;
+    right: 140px;
+    outline: none;
+}
+
+#logout > h1 {
+    padding: 10px;
+    margin: 0;
+    letter-spacing: 1px;
+    color: white;
+}
+
+#logout:hover {
+    background: rgb(26, 155, 26);
+    transform: translateY(-2px);
+}
+
+@media (max-width : 800px) {
+    #logout {
+        position: absolute;
+        top: 50px;
+        right: 10px;
+        outline: none;
+    }
+
+    #logout > h1  {
+        font-weight: 500;
+        font-size: 15px;
+        padding: 5px;
+    }
+}

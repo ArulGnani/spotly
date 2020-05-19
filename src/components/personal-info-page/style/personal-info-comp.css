@@ -1,0 +1,54 @@
+
+#info {
+    /* border: 2px solid firebrick; */
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 10px;
+    color: white;
+}
+
+#profile-pic {
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+}
+
+#name {
+    font-size: 30px;
+    letter-spacing: 2px;
+}
+
+
+.rec {
+    border: 2px solid rgb(10, 145, 10);
+    color: white;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 20px;
+    letter-spacing: 1px;
+    border-radius: 30px;
+    background: transparent;
+    transition: background 0.3s ease,transform 0.3s ease;
+    outline: none;
+}
+
+.rec:hover {
+    background: rgb(20, 185, 20);
+    color: black;
+}
+
+@media(max-width : 800px) {
+    #name {
+        font-size: 20px;
+    }
+
+    #profile-pic {
+        height: 70px;
+        width: 70px;
+    }
+
+    .rec{
+        font-size: 18px;
+    }
+}

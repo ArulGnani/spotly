@@ -1,0 +1,47 @@
+
+#top-artist {
+    /* border: 2px solid gold; */
+    width: 50%;
+}
+
+#header {
+    color: white;
+    display: flex;
+    align-items: center;
+    /* border: 2px solid forestgreen; */
+    margin: 5px;
+    position: relative;
+}
+
+#title {
+    padding: 5px;
+    margin-left: 5px;
+    letter-spacing: 1px;
+}
+
+#btn {
+    position: absolute;
+    right: 10px;
+    padding: 10px;
+    letter-spacing: 1px;
+    font-size: 18px;
+    font-weight: 200;
+    border-radius: 30px;
+    border: 1px solid whitesmoke;
+    background: transparent;
+    color: white;
+    transition: background 0.2s ease;
+    outline: none;
+}
+
+#btn:hover {
+    background: whitesmoke;
+    color: black;
+}
+
+@media (max-width : 800px) {
+    #top-artist {
+        /* border: 2px solid gold; */
+        width: 100%;
+    }
+}

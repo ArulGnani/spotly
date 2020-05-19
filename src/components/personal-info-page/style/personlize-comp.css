@@ -1,0 +1,26 @@
+
+main {
+    /* border: 2px solid rgb(196, 49, 49); */
+    width: 80%;
+    margin: auto;
+    padding: 5px;
+}
+
+#top {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+
+@media(max-width: 800px) {
+    main {
+        /* all: unset; */
+        border: 2px solid green;
+        width: 100vw;
+        /* margin: auto; */
+    }
+    #top {
+        flex-direction: column;
+    }
+}

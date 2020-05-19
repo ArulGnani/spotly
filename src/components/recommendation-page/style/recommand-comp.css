@@ -1,0 +1,44 @@
+
+#main {
+    /* border: 2px solid green; */
+    width: 50%;
+    margin: auto;
+}
+
+#home-btn {
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 2px solid rgb(10, 145, 10);
+    color: white;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 20px;
+    letter-spacing: 1px;
+    border-radius: 30px;
+    background: transparent;
+    transition: background 0.3s ease,transform 0.3s ease;
+    outline: none;
+}
+
+#home-btn:hover {
+    background: rgb(10, 145, 10);
+    color: black;
+}
+
+.intro {
+    text-align: center;
+    font-size: 20px;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+    font-weight: 300;
+}
+
+@media (max-width: 800px) {
+    #main {
+        /* border: 2px solid gold; */
+        width: 100vw;
+    }
+}
