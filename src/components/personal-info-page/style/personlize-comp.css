@@ -16,7 +16,7 @@ main {
 @media(max-width: 800px) {
     main {
         /* all: unset; */
-        border: 2px solid green;
+        /* border: 2px solid green; */
         width: 100vw;
         /* margin: auto; */
     }
