@@ -4,8 +4,8 @@ import './style/login-page.css'
 
 const LoginPage = () => {
     const [login,setLogin] = useState(false)
-    const client_id = "1c99548c4b15409e999781f32a4d6771"
-    const redirect = "http://localhost:3000/"
+    const client_id = "b49726fd8f9441c2bcf3a38e0da830cd"
+    const redirect = "https://spotly-v2.netlify.app/"
     const scope = 'user-top-read'
     const state = "sample123"
     let url = "https://accounts.spotify.com/authorize?response_type=token&"
