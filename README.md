@@ -7,6 +7,6 @@
  - custom build lyric finder api 
  
 
-## URL : https://spotly.netlify.com/
+## URL : https://spotly-v2.netlify.com/
     
   

@@ -26,13 +26,13 @@
     #logout {
         position: absolute;
         top: 50px;
-        right: 10px;
+        right: 0px;
         outline: none;
     }
 
     #logout > h1  {
         font-weight: 500;
         font-size: 15px;
-        padding: 5px;
+        padding: 2px;
     }
 }
