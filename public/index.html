@@ -2,11 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" href="./logo.png"/>
+    <link rel="icon" href="./icons/logo.png"/>
+    <link rel="manifest" href="./manifest.json"/>
+    <link rel="apple-touch-icon" href="./icons/logo.png">
+    <meta name="theme-color" content="#2b2b2b" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>spotly</title>
 </head>
 <body>
     <div id="root"></div>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener("load",event => {
+                navigator.serviceWorker.register('serviceWorker.js').then(function(registration) {
+                    console.log('Worker registration successful', registration.scope);
+                }, function(err) {
+                    console.log('Worker registration failed', err);
+                })
+                .catch(function(err) {
+                    console.log(err);
+                })
+            })
+        } else {
+            console.log("service worker not supported...")
+        }
+    </script>
 </body>
 </html>

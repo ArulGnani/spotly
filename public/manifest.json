@@ -1,0 +1,20 @@
+{
+    "short_name": "SpotLy",
+    "name": "SpotLy",
+    "icons": [
+      {
+        "src":"/icons/logo.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src":"/icons/logo-2.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ],
+    "start_url": ".",
+    "background_color": "#2b2b2b",
+    "theme_color": "#2b2b2b",
+    "display": "standalone"
+  }
