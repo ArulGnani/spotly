@@ -7,7 +7,6 @@ import PersonalInfo from './personal-info-comp'
 import './style/personlize-comp.css'
 
 const Personal = () => {
-    const [authedicated,setAuthedicated] = useState(false)
     const [topArtists,setTopArtist] = useState([]) 
     const [topTracks,setTopTracks] = useState([]) 
     const [personalInfo,setPersonalInfo] = useState({
@@ -20,7 +19,6 @@ const Personal = () => {
         const artists = sessionStorage.hasOwnProperty("top-artists")
         const personal = sessionStorage.hasOwnProperty("personal-info")
         if (token) {
-            setAuthedicated(true)
             if (tracks && artists){
                 let artists = JSON.parse(sessionStorage.getItem("top-artists"))
                 let tracks = JSON.parse(sessionStorage.getItem("top-tracks"))
@@ -32,8 +30,6 @@ const Personal = () => {
             if (!artists) usersTopArtists(token)
             if (!tracks) usersTopTrack(token)
             if (!personal) getPersonalInfo(token)
-        } else { 
-            setAuthedicated(false)
         }
     },[]) 
 
@@ -93,10 +89,6 @@ const Personal = () => {
             saveItLocal("top-tracks",tracks)
         })
     }
-
-    // if (authedicated === false) {
-    //     return ( <_404/> )
-    // }
 
     return (
         <main>
