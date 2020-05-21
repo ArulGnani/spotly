@@ -1,4 +1,3 @@
-
 const CACHE_NAME = "spotly-v1"
 
 const cacheUrl = ["/","/personal"]

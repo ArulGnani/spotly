@@ -1,8 +1,8 @@
 import React,{ useEffect, useState } from 'react'
-// import { Redirect } from 'react-router-dom'
 import _404 from '../../not-authendicated'
 import Track from './recommand-tracks-comp'
 import './style/recommand-comp.css'
+import { Redirect } from 'react-router'
 
 const Recommendation = () => {
     const [tracks,setTracks] = useState([]) 
@@ -38,7 +38,7 @@ const Recommendation = () => {
     }
 
     if (goHome) {
-        return ( <_404/> )
+        return ( <Redirect to="/personal"/> )
     }
 
     return (
