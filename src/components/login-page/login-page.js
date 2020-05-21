@@ -29,6 +29,7 @@ const LoginPage = () => {
             const token = hashParams["access_token"]
             sessionStorage.removeItem("access-token")
             sessionStorage.setItem("access-token",token)
+            setLogin(true)
         }
     },[document.location.hash])
 
