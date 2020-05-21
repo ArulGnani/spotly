@@ -8,6 +8,30 @@ body {
     color: white;
 }
 
+._404 {
+    overflow-y: hidden;
+    font-size: 40px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+._404 > button {
+    margin-top: 20px;
+    padding: 10px 15px 10px 15px;
+    border: 2px solid rgb(39, 194, 39);
+    border-radius: 10px;
+    font-size: 20px;
+    color: whitesmoke;
+    background: transparent;
+}
+
+._404 > button:hover{
+    background: rgb(39, 194, 39);
+}
+
 .login {
     display: flex;
     height: 100vh;

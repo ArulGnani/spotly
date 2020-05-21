@@ -7,7 +7,7 @@ import { BrowserRouter,Route } from 'react-router-dom'
  
 const App = () => {
   const isAuth = () => {
-    let accessToken = sessionStorage.getItem("access-token")
+    let accessToken = sessionStorage.hasOwnProperty("access-token")
     if (accessToken) return true
     else return false
   }

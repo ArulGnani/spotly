@@ -1,5 +1,6 @@
 import React,{ useEffect, useState } from 'react'
-import { Redirect } from 'react-router-dom'
+// import { Redirect } from 'react-router-dom'
+import _404 from '../../not-authendicated'
 import TopArtists from './top-artist-comp'
 import TopTracks from './top-tracks-comp'
 import PersonalInfo from './personal-info-comp'
@@ -94,7 +95,7 @@ const Personal = () => {
     }
 
     if (!authedicated) {
-        return <Redirect to="/" />
+        return ( <_404/> )
     }
 
     return (

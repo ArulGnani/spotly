@@ -1,5 +1,6 @@
 import React,{ useEffect, useState } from 'react'
-import { Redirect } from 'react-router-dom'
+// import { Redirect } from 'react-router-dom'
+import _404 from '../../not-authendicated'
 import Track from './recommand-tracks-comp'
 import './style/recommand-comp.css'
 
@@ -8,13 +9,14 @@ const Recommendation = () => {
     const [goHome,setHome] = useState(false)
 
     useEffect(() => {
-        const token = sessionStorage.getItem("access-token")
+        const token = sessionStorage.hasOwnProperty("access-token")
         if (token){
-            recommendedSongs(token)
+            recommendedSongs()
         }
     },[])
 
-    const recommendedSongs = (token) => {
+    const recommendedSongs = () => {
+        let token = sessionStorage.getItem("access-token")
         let allArtists = JSON.parse(sessionStorage.getItem("top-artists"))
         let top_10 = []
         allArtists.forEach(ar => {
@@ -36,7 +38,7 @@ const Recommendation = () => {
     }
 
     if (goHome) {
-        return ( <Redirect to="/personal"/> )
+        return ( <_404/> )
     }
 
     return (
@@ -45,6 +47,9 @@ const Recommendation = () => {
                 home
             </button>
             <h4 className="intro">recommanded albums based on your lisiting</h4>
+            <button onClick={() => recommendedSongs()} id="home-btn">
+                reccomend new ablums.. 
+            </button>
             { tracks.map(song => <Track key={song.id} track={song}/> )}
         </section>
     )
