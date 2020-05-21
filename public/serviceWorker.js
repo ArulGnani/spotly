@@ -8,7 +8,7 @@ self.addEventListener("install",event => {
     event.waitUntil(
         caches.open(CACHE_NAME) 
             .then(cache => {
-                console.log("opened cache")
+                // console.log("opened cache")
                 return cache.addAll(cacheUrl)
             })
     )
@@ -35,7 +35,7 @@ self.addEventListener('activate',event => {
             return Promise.all(
                 cacheNames.filter(cacheName => {
                     if (cacheName !== CACHE_NAME) {
-                        console.log("delted old cache")
+                        // console.log("delted old cache")
                         return caches.delete(cacheName)
                     }
                 })
