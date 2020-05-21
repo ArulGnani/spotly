@@ -7,11 +7,15 @@ import { Redirect } from 'react-router'
 const Recommendation = () => {
     const [tracks,setTracks] = useState([]) 
     const [goHome,setHome] = useState(false)
+    const [auth,setAuth] = useState(false)
 
     useEffect(() => {
         const token = sessionStorage.hasOwnProperty("access-token")
         if (token){
             recommendedSongs()
+            setAuth(true)
+        } else {
+            setAuth(false)
         }
     },[])
 
@@ -39,6 +43,10 @@ const Recommendation = () => {
 
     if (goHome) {
         return ( <Redirect to="/personal"/> )
+    }
+
+    if (auth === false) {
+        return ( <_404/> )
     }
 
     return (

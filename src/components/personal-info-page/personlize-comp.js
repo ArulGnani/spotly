@@ -7,7 +7,7 @@ import PersonalInfo from './personal-info-comp'
 import './style/personlize-comp.css'
 
 const Personal = () => {
-    const [authedicated,setAuthedicated] = useState(true)
+    const [authedicated,setAuthedicated] = useState(false)
     const [topArtists,setTopArtist] = useState([]) 
     const [topTracks,setTopTracks] = useState([]) 
     const [personalInfo,setPersonalInfo] = useState({
@@ -94,7 +94,7 @@ const Personal = () => {
         })
     }
 
-    if (!authedicated) {
+    if (authedicated === false) {
         return ( <_404/> )
     }
 
