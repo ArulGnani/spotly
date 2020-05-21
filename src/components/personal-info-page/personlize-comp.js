@@ -94,9 +94,9 @@ const Personal = () => {
         })
     }
 
-    if (authedicated === false) {
-        return ( <_404/> )
-    }
+    // if (authedicated === false) {
+    //     return ( <_404/> )
+    // }
 
     return (
         <main>
