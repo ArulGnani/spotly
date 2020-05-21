@@ -26,12 +26,20 @@ const LoginPage = () => {
             if (hashParams["access_token"] === ""){
                 alert("can't get access_token")
             }
-            setLogin(true)
             const token = hashParams["access_token"]
             sessionStorage.removeItem("access-token")
             sessionStorage.setItem("access-token",token)
         }
     },[document.location.hash])
+
+    useEffect(() => {
+        let token = sessionStorage.hasOwnProperty("access-token")
+        if (token) {
+            setLogin(true)
+        } else { 
+            console.log("can't access access token")
+        }
+    },[])
 
     if (login) {
         return ( <Redirect to="/personal"/> )

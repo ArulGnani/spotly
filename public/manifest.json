@@ -1,6 +1,6 @@
 {
-    "short_name": "SpotLy",
-    "name": "SpotLy",
+    "short_name": "spotly",
+    "name": "spotly",
     "icons": [
       {
         "src":"/icons/logo.png",

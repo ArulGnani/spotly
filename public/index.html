@@ -14,14 +14,10 @@
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener("load",event => {
-                navigator.serviceWorker.register('serviceWorker.js').then(function(registration) {
-                    console.log('Worker registration successful', registration.scope);
-                }, function(err) {
-                    console.log('Worker registration failed', err);
-                })
-                .catch(function(err) {
-                    console.log(err);
-                })
+                navigator.serviceWorker.register('serviceWorker.js')
+                    .catch(function(err) {
+                        console.log("service worker not supported...");
+                    })
             })
         } else {
             console.log("service worker not supported...")
